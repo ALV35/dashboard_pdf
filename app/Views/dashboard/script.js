@@ -3,12 +3,14 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 var infoGraph = [];
-var titlesChart = ["Dia", "Valor"];
+var titlesChart = ["Dia", "Valor","Tipo"];
 infoGraph.push(titlesChart);
+
+console.log(moviments);
 
 moviments.forEach((item)=>{
   console.log(item)	    
-  chartItem = [item.date, item.value];
+  chartItem = [item.date , item.type, parseFloat(item.value)];
   infoGraph.push(chartItem);
 })
 

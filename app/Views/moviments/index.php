@@ -5,9 +5,7 @@
         <div class="container">
             <h1><?= $title ?></h1>
             <hr>
-            <div class="d-flex justify-content-end">
-                <a href="<?= site_url('form')?>" class="btn btn-success mb-2">Add</a>
-            </div>
+           
             <table class="table table-bordered table-striped"id="moviment-list">
                 <thead>
                     <tr>
@@ -31,7 +29,10 @@
                     <?php endforeach; ?>
                     <?php endif; ?>
                 </tbody>
-            </table>
+            </table> 
+        <div class="d-flex justify-content-end">
+            <a href="<?= site_url('form')?>" class="btn btn-success mb-2">Add</a>
+        </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -49,13 +50,14 @@
                 $('#moviment-list').DataTable({
                     dom: 'Bfrtip',
                     buttons: [
-                        'copyHtml5',
+                        'pdfHtml5',
                         'excelHtml5',
-                        'csvHtml5',
-                        'pdfHtml5'
+                        'copyHtml5', 
+                        'csvHtml5'
                     ]
                 });
             } );
         </script>
+       
 
 <?= $this->endSection() ?>
