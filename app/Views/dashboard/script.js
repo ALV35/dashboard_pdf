@@ -3,19 +3,16 @@ google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
 var infoGraph = [];
-var titlesChart = ["Dia", "Valor","Tipo"];
+var titlesChart = ["Dia", "Valor"];
 infoGraph.push(titlesChart);
-
-console.log(moviments);
 
 moviments.forEach((item)=>{
   console.log(item)	    
-  chartItem = [item.date , item.type, parseFloat(item.value)];
+  chartItem = [item.date, parseFloat(item.value)];
   infoGraph.push(chartItem);
 })
 
 var data = google.visualization.arrayToDataTable(infoGraph);
-
 
 var options = {
 title: 'Movimentos do Livro',

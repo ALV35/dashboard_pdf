@@ -21,10 +21,9 @@ class Dashboard extends BaseController
         
         $conexao = mysqli_connect($servername, $username, $password, $database);
 
-        $sql="SELECT date, value, type FROM moviment m ";
+        $sql="SELECT * FROM moviment m";
         $retorno = mysqli_query($conexao, $sql);
 
-        
         $data = [
             'title' => 'Dashboard',
             'userInfo' => $userInfo,
